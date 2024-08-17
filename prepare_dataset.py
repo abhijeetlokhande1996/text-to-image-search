@@ -7,7 +7,9 @@ from typing import List, Any
 from transformers import DistilBertTokenizer
 import cv2
 
-MODEL_CHECKPOINT = "distilbert/distilbert-base-uncased"
+
+def get_model_checkpoint() -> str:
+    return "distilbert/distilbert-base-uncased"
 
 
 class TextToImageSearchDataset(torch.utils.data.Dataset):

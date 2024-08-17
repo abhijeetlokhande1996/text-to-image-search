@@ -9,7 +9,7 @@ from transformers import DistilBertModel, DistilBertTokenizer
 from tqdm import tqdm
 import pandas as pd
 from typing import List, Any
-from prepare_dataset import TextToImageSearchDataset
+from prepare_dataset import TextToImageSearchDataset, get_model_checkpoint
 import torch.nn.functional as F
 import itertools
 # get_device_map
@@ -27,7 +27,7 @@ def get_device_map() -> str:
 DEVICE = get_device_map()
 # print("Device :: {}".format(DEVICE))
 
-MODEL_CHECKPOINT = "distilbert/distilbert-base-uncased"
+MODEL_CHECKPOINT = get_model_checkpoint()
 
 
 class ImageEncoder(nn.Module):
